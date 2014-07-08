@@ -11,7 +11,7 @@ $ component install binocarlos/pagehammer
 
 ## example
 
-Create a [pageturner](https://github.com/binocarlos/pagemaker) book and pass it to pagehammer
+Create a [pageturner](https://github.com/binocarlos/pageturner) book and pass it to pagehammer
 
 ```js
 var PageTurner = require('pageturner')
