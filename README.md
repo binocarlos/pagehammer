@@ -26,14 +26,18 @@ var data = {
 }
 
 var book = PageTurner(data)
-PageHammer(book)
+var hammer = PageHammer(book)
+
+hammer.on('swipe', function(direction, toPage){
+	// direction is 'left' or 'right'	
+})
 
 book.appendTo(document.querySelector('#container'))
 ```
 
 ## api
 
-### `PageHammer(book, opts)`
+### `var hammer = PageHammer(book, opts)`
 
 Activate touch events for a [pageturner](https://github.com/binocarlos/pageturner) book
 
@@ -41,5 +45,13 @@ The options object has the following properties:
 
  * minDistance - the minimum distance a swipe has to be in pixels
  
+## events
+
+### `hammer.on('swipe', function(direction, toPage){})`
+
+triggered when the page has been turned because of a swipe.
+
+The direction is 'left' or 'right' and the toPage is the page this has caused the book to turn to
+
 ## licence
 MIT

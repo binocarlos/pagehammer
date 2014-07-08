@@ -9,8 +9,7 @@
   },
   "development": {},
   "styles": [],
-  "files":[
-  ],
+  "files": [],
   "main": "index.js",
   "scripts": [
     "index.js"

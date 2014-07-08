@@ -1,3 +1,5 @@
+var Emitter = require('emitter')
+
 module.exports = PageHammer;
 
 var defaults = {
@@ -16,6 +18,8 @@ function PageHammer (book, opts) {
   this.options = opts
   this.setupEvents()
 }
+
+Emitter(PageHammer.prototype)
 
 PageHammer.prototype.setupEvents = function () {
   var self = this;
@@ -42,7 +46,8 @@ PageHammer.prototype.setupHammer = function (target) {
     }
 
     turned = true
-    self.book.turnDirection(ev.direction)
+    var nextPage = self.book.turnDirection(ev.direction)
+    self.emit('swipe', ev.direction, nextPage)
   }
 
   hammertime.ondragend = function(ev){
