@@ -5,7 +5,7 @@ var defaults = {
 }
 
 function PageHammer (book, opts) {
-  if (!(this instanceof PageHammer)) return new PageHammer(opts);
+  if (!(this instanceof PageHammer)) return new PageHammer(book, opts);
   opts = opts || {}
   Object.keys(defaults || {}).forEach(function(key){
   	if(!opts[key]){

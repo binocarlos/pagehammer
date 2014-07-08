@@ -1,6 +1,6 @@
 {
   "name": "pagehammer",
-  "description": "Touch event handler for turning books",
+  "description": "Touch event handler for pageturner books",
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
