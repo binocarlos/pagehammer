@@ -1,0 +1,18 @@
+{
+  "name": "pagehammer",
+  "description": "Touch event handler for turning books",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "binocarlos/hammer": "*",
+    "component/emitter": "*"
+  },
+  "development": {},
+  "styles": [],
+  "files":[
+  ],
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
