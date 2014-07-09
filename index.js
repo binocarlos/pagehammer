@@ -6,29 +6,20 @@ var defaults = {
 	minDistance:20
 }
 
-function PageHammer (book, opts) {
-  if (!(this instanceof PageHammer)) return new PageHammer(book, opts);
+function PageHammer (opts) {
+  if (!(this instanceof PageHammer)) return new PageHammer(opts);
   opts = opts || {}
   Object.keys(defaults || {}).forEach(function(key){
   	if(!opts[key]){
   		opts[key] = defaults[key]
   	}
   })
-  this.book = book
   this.options = opts
-  this.setupEvents()
 }
 
 Emitter(PageHammer.prototype)
 
-PageHammer.prototype.setupEvents = function () {
-  var self = this;
-  this.book.on('render', function(elem){
-    self.setupHammer(target)
-  })
-}
-
-PageHammer.prototype.setupHammer = function (target) {
+PageHammer.prototype.setup = function (target) {
   var self = this;
 
   if(this.hammertime) return

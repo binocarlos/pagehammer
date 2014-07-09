@@ -1,7 +1,7 @@
 pagehammer
 ==========
 
-Touch event handler for turning [pageturner](https://github.com/binocarlos/pageturner) books
+Touch event handler for turning books
 
 ## installation
 
@@ -11,22 +11,15 @@ $ component install binocarlos/pagehammer
 
 ## example
 
-Create a [pageturner](https://github.com/binocarlos/pageturner) book and pass it to pagehammer
+Create a pagehammer and assign it to a DOM element.
 
 ```js
-var PageTurner = require('pageturner')
 var PageHammer = require('pagehammer')
-var data = {
-	title:"My Cool Book",
-	pages:[{
-		title:"Intro",
-		html:"<p>This is the first page</p>"
-	},
-	...]
-}
 
-var book = PageTurner(data)
-var hammer = PageHammer(book)
+var book = document.createElement('div')
+var hammer = PageHammer()
+
+hammer.setup(book)
 
 hammer.on('swipe', function(direction, toPage){
 	// direction is 'left' or 'right'	
@@ -37,14 +30,16 @@ book.appendTo(document.querySelector('#container'))
 
 ## api
 
-### `var hammer = PageHammer(book, opts)`
-
-Activate touch events for a [pageturner](https://github.com/binocarlos/pageturner) book
+### `var hammer = PageHammer(opts)`
 
 The options object has the following properties:
 
  * minDistance - the minimum distance a swipe has to be in pixels
- 
+
+### `hammer.setup(elem)`
+
+Setup the pagehammer on the given DOM element
+
 ## events
 
 ### `hammer.on('swipe', function(direction, toPage){})`
