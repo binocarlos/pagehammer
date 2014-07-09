@@ -19,6 +19,11 @@ function PageHammer (opts) {
 
 Emitter(PageHammer.prototype)
 
+var directions = {
+  left:-1,
+  right:1
+}
+
 PageHammer.prototype.setup = function (target) {
   var self = this;
 
@@ -37,8 +42,7 @@ PageHammer.prototype.setup = function (target) {
     }
 
     turned = true
-    var nextPage = self.book.turnDirection(ev.direction)
-    self.emit('swipe', ev.direction, nextPage)
+    self.emit('swipe', ev.direction, directions[ev.direction])
   }
 
   hammertime.ondragend = function(ev){

@@ -42,11 +42,11 @@ Setup the pagehammer on the given DOM element
 
 ## events
 
-### `hammer.on('swipe', function(direction, toPage){})`
+### `hammer.on('swipe', function(side, direction){})`
 
 triggered when the page has been turned because of a swipe.
 
-The direction is 'left' or 'right' and the toPage is the page this has caused the book to turn to
+The side is 'left' or 'right' and direction is -1 or 1
 
 ## licence
 MIT
