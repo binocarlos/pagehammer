@@ -1,18 +1,19 @@
 var Emitter = require('emitter')
+var Hammer = require('hammer')
 
 module.exports = PageHammer;
 
 var defaults = {
-	minDistance:20
+  minDistance:20
 }
 
 function PageHammer (opts) {
   if (!(this instanceof PageHammer)) return new PageHammer(opts);
   opts = opts || {}
   Object.keys(defaults || {}).forEach(function(key){
-  	if(!opts[key]){
-  		opts[key] = defaults[key]
-  	}
+    if(!opts[key]){
+      opts[key] = defaults[key]
+    }
   })
   this.options = opts
 }
@@ -36,7 +37,7 @@ PageHammer.prototype.setup = function (target) {
 
   var turned = false
 
-  hammertime.ondrag = function(ev){
+  this.hammertime.ondrag = function(ev){
     if(turned){
       return
     }
@@ -45,7 +46,7 @@ PageHammer.prototype.setup = function (target) {
     self.emit('swipe', ev.direction, directions[ev.direction])
   }
 
-  hammertime.ondragend = function(ev){
+  this.hammertime.ondragend = function(ev){
     turned = false
   }
 }
