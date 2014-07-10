@@ -40,19 +40,8 @@ PageHammer.prototype.setup = function (target) {
     tap_max_distance:this.options.minDistance-1
   })
 
-  var turned = false
-
-  this.hammertime.ondrag = function(ev){
-    if(turned){
-      return
-    }
-
-    turned = true
+  this.hammertime.ondragstart = function(ev){
     var direction = otherDirections[ev.direction]
     self.emit('swipe', direction, directions[direction])
-  }
-
-  this.hammertime.ondragend = function(ev){
-    turned = false
   }
 }
