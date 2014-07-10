@@ -25,6 +25,11 @@ var directions = {
   right:1
 }
 
+var otherDirections = {
+  left:'right',
+  right:'left'
+}
+
 PageHammer.prototype.setup = function (target) {
   var self = this;
 
@@ -43,7 +48,8 @@ PageHammer.prototype.setup = function (target) {
     }
 
     turned = true
-    self.emit('swipe', ev.direction, directions[ev.direction])
+    var direction = otherDirections[ev.direction]
+    self.emit('swipe', direction, directions[direction])
   }
 
   this.hammertime.ondragend = function(ev){
