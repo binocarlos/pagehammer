@@ -7,6 +7,7 @@ var defaults = {
   minDistance:20
 }
 
+
 function PageHammer (opts) {
   if (!(this instanceof PageHammer)) return new PageHammer(opts);
   opts = opts || {}
