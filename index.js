@@ -42,6 +42,9 @@ PageHammer.prototype.setup = function (target) {
   })
 
   this.hammertime.ondragstart = function(ev){
+    if(!otherDirections[ev.direction]){
+      return
+    }
     var direction = otherDirections[ev.direction]
     self.emit('swipe', direction, directions[direction])
   }
