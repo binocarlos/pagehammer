@@ -30,19 +30,19 @@ book.appendTo(document.querySelector('#container'))
 
 ## api
 
-### `var hammer = PageHammer(opts)`
+#### `var hammer = PageHammer(opts)`
 
 The options object has the following properties:
 
  * minDistance - the minimum distance a swipe has to be in pixels
 
-### `hammer.setup(elem)`
+#### `hammer.setup(elem)`
 
 Setup the pagehammer on the given DOM element
 
 ## events
 
-### `hammer.on('swipe', function(side, direction){})`
+#### `hammer.on('swipe', function(side, direction){})`
 
 triggered when the page has been turned because of a swipe.
 
